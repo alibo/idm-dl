@@ -1,0 +1,31 @@
+{
+  "name": "idm-dl",
+  "version": "1.0.0",
+  "description": "Push your links to IDM to download from another device",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alibo/idm-dl.git"
+  },
+  "keywords": [
+    "idm",
+    "nodejs",
+    "links",
+    "download",
+    "internet",
+    "download",
+    "manager"
+  ],
+  "author": "Ali Borhani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alibo/idm-dl/issues"
+  },
+  "homepage": "https://github.com/alibo/idm-dl#readme",
+  "dependencies": {
+    "valid-url": "^1.0.9"
+  }
+}
