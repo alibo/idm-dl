@@ -2,7 +2,7 @@ var net = require('net');
 
 var options = {
 	host: '127.0.0.1',
-	port: 2323
+	port: 4444
 };
 
 /**

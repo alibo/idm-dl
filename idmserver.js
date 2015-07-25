@@ -1,10 +1,12 @@
 var net = require('net');
 var validUrl = require('valid-url');
+var exec = require('child_process').exec;
+var util = require('util');
 
 var options = {
-	host: '127.0.0.1',
-	port: 2323,
-	path: 'C:\\Program Files\\idm\\idman.exe'
+	host: '0.0.0.0',
+	port: 4444,
+	path: 'C:\\Program Files\\Internet Download Manager\\IDMan.exe'
 };
 
 /**
@@ -56,7 +58,8 @@ IdmServer.prototype.start = function(callback){
 			var action = jsonData.action.trim();
 
 			console.log("adding url: %s to idm with action: %s", url, action);
-
+			self._sendToIdm(url, action);
+			//todo send feedback to client
 		});
 
 	});
@@ -88,6 +91,25 @@ IdmServer.prototype._isValid = function(data){
 	}
 
 	return true;
+};
+
+IdmServer.prototype._sendToIdm = function(url, action){
+
+	var instantCommand = '%s /n /d "%s"'
+	var queueCommand = instantCommand + ' /a';
+
+	var cmd = (action == 'queue') ? queueCommand : instantCommand;
+
+	cmd = util.format(cmd, this.options.path, url);
+
+	exec(cmd, function(error, stdout, stderr) {
+		if(!error){
+			console.log('Success! - ' + stdout);
+		}else{
+			console.error('Error: ' + error);
+		}
+	});
+
 };
 
 

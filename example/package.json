@@ -1,0 +1,16 @@
+{
+  "name": "idm-dl-example",
+  "version": "1.0.0",
+  "description": "example for idm-dl",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-getopt": "^0.2.3",
+    "valid-url": "^1.0.9"
+  }
+}
