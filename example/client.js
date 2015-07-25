@@ -4,8 +4,8 @@ var validUrl = require('valid-url');
 var getopt = require('node-getopt').create([
 	['q' , 'queue' , 'Add to main queue [optional]'],
 	['u' , '='     , 'Url'],
-	[''  , 'port'  , 'Server port'],
-	[''  , 'host'  , 'Server address'],
+	[''  , 'port=ARG'  , 'Server port'],
+	[''  , 'host=ARG'  , 'Server address'],
 	['h' , 'help'  , 'display this help']
 ]);
 

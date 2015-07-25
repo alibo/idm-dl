@@ -95,7 +95,7 @@ IdmServer.prototype._isValid = function(data){
 
 IdmServer.prototype._sendToIdm = function(url, action){
 
-	var instantCommand = '%s /n /d "%s"'
+	var instantCommand = '"%s" /n /d "%s"'
 	var queueCommand = instantCommand + ' /a';
 
 	var cmd = (action == 'queue') ? queueCommand : instantCommand;
